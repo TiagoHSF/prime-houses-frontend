@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prime-houses-frontend';
+
+  teste(){
+    console.log("teste");
+  }
 }

@@ -1,0 +1,14 @@
+@import "./../../../../constantes.scss";
+
+.input-box {
+    padding-bottom: 5px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+    background-color: transparent !important;
+}
+
+::ng-deep .mdc-floating-label {
+    color: $corPrincipal !important;
+    font-weight: 600 !important;
+}

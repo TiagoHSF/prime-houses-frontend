@@ -1,0 +1,27 @@
+@import "./../../../constantes.scss";
+
+.box {
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    width: 50rem !important;
+    padding: 2rem;
+}
+
+.box-body {
+    height: 20rem;
+    background-color: bisque;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 2rem 2rem;
+    border-radius: 13px;
+}
+
+h1 {
+    color: $corPrincipal;
+    font-weight: 600;
+}
+
+::ng-deep .mdc-label{
+    font-size: 12px;
+}

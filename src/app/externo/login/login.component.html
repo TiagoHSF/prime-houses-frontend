@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div class="box">
+    <!-- Primeira coluna com os inputs -->
+    <div fxFlex="50">
+      <div class="box-body">
+        <h1>BEM-VINDO</h1>
+        <app-input-padrao
+          [style]="'width: 18rem'"
+          [appearance]="'fill'"
+          [nomeInput]="'Email'"
+          [placeholder]="'email@email.com'"
+          [type]="'text'"
+        ></app-input-padrao>
+        <app-input-padrao
+          [style]="'width: 18rem'"
+          [appearance]="'fill'"
+          [nomeInput]="'Senha'"
+          [placeholder]="''"
+          [type]="'password'"
+        ></app-input-padrao>
+
+        <div fxLayout="row">
+          <div style="font-size: 10px;" fxFlex="50">
+            <mat-checkbox>LEMBRAR SENHA</mat-checkbox>
+          </div>
+          <div style="margin: auto !important" fxFlex="50">
+            <span style="font-size: 12px;">ESQUECI A SENHA</span>
+          </div>
+        </div>
+
+        <app-botao-padrao
+          [style]="'width: 15rem'"
+          [nomeBotao]="'ACESSAR'"
+          [desabilitado]="false"
+          (click)="login()"
+        ></app-botao-padrao>
+      </div>
+    </div>
+
+    <!-- Segunda coluna para o texto "teste" -->
+    <div fxFlex="50">
+        <img src="./../../../assets/images/5127314.jpg" alt="">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+@import "./../../../../constantes.scss";
+
+button {
+    text-transform: uppercase;
+    background-color: $corPrincipal;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2C3E50; 
+}
