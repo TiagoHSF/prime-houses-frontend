@@ -1,1 +1,146 @@
-<p>cadastro works!</p>
+<div *ngIf="form" style="height: 100%; width: 100%" class="background">
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    style="height: 100%; width: 100%"
+  >
+    <div class="box efeito-vidro">
+      <div fxFlex="100">
+        <div fxLayoutAlign="center center">
+          <h1 class="titulo">CADASTRO</h1>
+        </div>
+        <form [formGroup]="form">
+          <div *ngIf="!inserirCreci" fxLayoutAlign="center center">
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'nome'"
+                [appearance]="'outline'"
+                [nomeInput]="'Nome'"
+                [placeholder]="'Prime'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'sobrenome'"
+                [appearance]="'outline'"
+                [nomeInput]="'Sobrenome'"
+                [placeholder]="'Houses'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+          </div>
+          <div *ngIf="!inserirCreci" fxLayoutAlign="center center">
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'email'"
+                [appearance]="'outline'"
+                [nomeInput]="'Email'"
+                [placeholder]="'email@email.com'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'celular'"
+                [appearance]="'outline'"
+                [nomeInput]="'Celular'"
+                [placeholder]="'+55xx xxxx-xxxx'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+          </div>
+          <div *ngIf="!inserirCreci" fxLayoutAlign="center center">
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'documento'"
+                [appearance]="'outline'"
+                [nomeInput]="'Documento'"
+                [placeholder]="'xxx.xxx.xx-xx ou xx.xxx.xxx/0001-xx'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'dataNascimento'"
+                [appearance]="'outline'"
+                [nomeInput]="'Data Nascimento'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+          </div>
+          <div *ngIf="!inserirCreci" fxLayoutAlign="center center">
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'senha'"
+                [appearance]="'outline'"
+                [nomeInput]="'Senha'"
+                [type]="'password'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="50">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'confirmarSenha'"
+                [appearance]="'outline'"
+                [nomeInput]="'Confirmação Senha'"
+                [type]="'password'"
+              ></app-input-padrao>
+            </div>
+          </div>
+          <div *ngIf="inserirCreci" fxLayoutAlign="center center">
+            <div fxFlex="100" fxLayoutAlign="center center">
+                <app-input-padrao
+                  [style]="'width: 20rem;'"
+                  [form]="form"
+                  [formControlName]="'creci'"
+                  [appearance]="'outline'"
+                  [nomeInput]="'Número CRECI'"
+                  [type]="'text'"
+                ></app-input-padrao>
+              </div>
+          </div>
+        </form>
+        <div *ngIf="!inserirCreci" fxLayoutAlign="center center">
+            <div fxLayoutAlign="center center" fxFlex="50">
+                <span [ngClass]="{'destaque-selecao': !checked}">QUERO ENCONTRAR IMÓVEIS</span>
+            </div>
+            <mat-slide-toggle [(ngModel)]="checked"></mat-slide-toggle>
+            <div fxLayoutAlign="center center" fxFlex="50">
+                <span [ngClass]="{'destaque-selecao': checked}">SOU UM CORRETOR</span>
+            </div>
+          </div>
+        <div style="padding: 20px">
+          <app-botao-padrao
+            fxLayoutAlign="center center"
+            [style]="'width: 15rem'"
+            [nomeBotao]="nomeBotao()"
+            [desabilitado]="disabledContinuar()"
+            (click)="finalizarCadastro()"
+          ></app-botao-padrao>
+          <span
+            style="margin-top: 1rem; font-size: 15px"
+            fxLayoutAlign="center center"
+            >Já possuí uma conta?
+            <a (click)="loginNavigate()">&nbsp;Acessar</a></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

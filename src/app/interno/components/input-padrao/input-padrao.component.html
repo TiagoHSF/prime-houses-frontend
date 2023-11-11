@@ -1,17 +1,20 @@
-<mat-form-field *ngIf="possuiIcone && iconePrefixo" [style]="style" class="input-box" [appearance]="appearance">
-    <mat-label>{{nomeInput}}</mat-label>
-    <input matInput [type]="type" [placeholder]="placeholder"/>
-    <mat-icon matPreffix>{{ icone }}</mat-icon>
-</mat-form-field>
+<form [formGroup]="form">
+  <mat-form-field *ngIf="possuiIcone && iconePrefixo" [style]="style" class="input-box" [appearance]="appearance">
+      <mat-label>{{nomeInput}}</mat-label>
+      <input matInput [type]="type" [placeholder]="placeholder" [formControlName]="formControlName"/>
+      <mat-icon matPreffix>{{ icone }}</mat-icon>
+  </mat-form-field>
 
-<mat-form-field *ngIf="possuiIcone && iconeSufixo" [style]="style" class="input-box" [appearance]="appearance">
-    <mat-label>{{nomeInput}}</mat-label>
-    <input matInput [type]="type" [placeholder]="placeholder"/>
-    <mat-icon matSuffix>{{ icone }}</mat-icon>
-</mat-form-field>
+  <mat-form-field *ngIf="possuiIcone && iconeSufixo" [style]="style" class="input-box" [appearance]="appearance">
+      <mat-label>{{nomeInput}}</mat-label>
+      <input matInput [type]="type" [placeholder]="placeholder" [formControlName]="formControlName"/>
+      <mat-icon matSuffix>{{ icone }}</mat-icon>
+  </mat-form-field>
 
-<mat-form-field *ngIf="!possuiIcone" [style]="style" class="input-box" [appearance]="appearance">
-    <mat-label>{{nomeInput}}</mat-label>
-    <input matInput [type]="type" [placeholder]="placeholder"/>
-    <mat-icon matSuffix>{{ icone }}</mat-icon>
-</mat-form-field>
+  <mat-form-field *ngIf="!possuiIcone" [style]="style" class="input-box" [appearance]="appearance">
+      <mat-label>{{nomeInput}}</mat-label>
+      <input matInput [type]="type" [placeholder]="placeholder" [formControlName]="formControlName"/>
+      <mat-icon matSuffix>{{ icone }}</mat-icon>
+  </mat-form-field>
+</form>
+  

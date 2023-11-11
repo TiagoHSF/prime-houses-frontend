@@ -1,50 +1,59 @@
-<!-- <div fxLayout="row" fxLayoutAlign="center center">
-  <div class="box">
-    <div fxFlex="50">
-      <div class="box-body">
-        <h1>BEM-VINDO</h1>
-        <app-input-padrao
-          [style]="'width: 18rem'"
-          [appearance]="'fill'"
-          [nomeInput]="'Email'"
-          [placeholder]="'email@email.com'"
-          [type]="'text'"
-        ></app-input-padrao>
-        <app-input-padrao
-          [style]="'width: 18rem'"
-          [appearance]="'fill'"
-          [nomeInput]="'Senha'"
-          [placeholder]="''"
-          [type]="'password'"
-        ></app-input-padrao>
-
-        <div fxLayout="row">
-          <div style="font-size: 10px;" fxFlex="50">
-            <mat-checkbox>LEMBRAR SENHA</mat-checkbox>
-          </div>
-          <div style="margin: auto !important" fxFlex="50">
-            <span style="font-size: 12px;">ESQUECI A SENHA</span>
-          </div>
+<div *ngIf="form" style="height: 100%; width: 100%" class="background">
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    style="height: 100%; width: 100%"
+  >
+    <div class="box efeito-vidro">
+      <div fxFlex="100" *ngIf="form">
+        <div fxLayoutAlign="center center">
+          <h1 class="titulo">LOGIN</h1>
         </div>
-
-        <app-botao-padrao
-          [style]="'width: 15rem'"
-          [nomeBotao]="'ACESSAR'"
-          [desabilitado]="false"
-          (click)="login()"
-        ></app-botao-padrao>
+        <form [formGroup]="form">
+          <app-input-padrao
+            [style]="'width: 20rem;'"
+            fxLayoutAlign="center center"
+            [icone]="'mail'"
+            [form]="form"
+            [formControlName]="'email'"
+            [appearance]="'outline'"
+            [nomeInput]="'Email'"
+            [placeholder]="'email@email.com'"
+            [iconeSufixo]="true"
+            [type]="'text'"
+          ></app-input-padrao>
+          <app-input-padrao
+            [style]="'width: 20rem;'"
+            [icone]="'key'"
+            fxLayoutAlign="center center"
+            [form]="form"
+            [formControlName]="'senha'"
+            [appearance]="'outline'"
+            [nomeInput]="'Senha'"
+            [iconeSufixo]="true"
+            [placeholder]="''"
+            [type]="'password'"
+          ></app-input-padrao>
+        </form>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+          <mat-checkbox>LEMBRAR SENHA</mat-checkbox>
+          <span>ESQUECI A SENHA</span>
+        </div>
+        <div style="padding: 20px">
+          <app-botao-padrao
+            fxLayoutAlign="center center"
+            [style]="'width: 15rem'"
+            [nomeBotao]="'ACESSAR'"
+            [desabilitado]="false"
+            (click)="login()"
+          ></app-botao-padrao>
+          <span
+            style="margin-top: 1rem; font-size: 15px"
+            fxLayoutAlign="center center"
+            >Ainda não possui uma conta? <a (click)="cadastroNavigate()">&nbsp;Criar</a></span
+          >
+        </div>
       </div>
-    </div>
-  </div>
-</div> -->
-
-<div style="height: 100%; width: 100%;" class="background">
-  <div ffxLayout="row" fxLayoutAlign="center center" style="height: 100%; width: 100%;">
-    <div fxFlex="50">
-      AQUI
-    </div>
-    <div fxFlex="50">
-      AQUI
     </div>
   </div>
 </div>

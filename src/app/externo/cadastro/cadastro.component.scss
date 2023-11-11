@@ -1,0 +1,51 @@
+@import "./../../../constantes.scss";
+
+.box {
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    width: 50rem !important;
+    padding: 2rem;
+    border-radius: 5px;
+    
+}
+
+.efeito-vidro {
+    background: rgba(255, 243, 243, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+
+h1 {
+    color: $roxoPrincipal;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 1rem;
+}
+
+::ng-deep .mdc-label{
+    font-size: 12px;
+}
+
+.background {
+    background: linear-gradient(to right, #c9bed9, #b8b2c4 25%, #8e79b3 50%, #a9a1b5 75%, #a4a2ac);
+}
+
+.imagem {
+    background-image: url("./../../../assets/images/City\ skyline-pana.png");
+}
+
+a {
+    color: $roxoPrincipal;
+    font-weight: bold;
+}
+
+.destaque-selecao {
+    font-weight: bold;
+    font-size: 16px;
+    color: $roxoPrincipal;
+}

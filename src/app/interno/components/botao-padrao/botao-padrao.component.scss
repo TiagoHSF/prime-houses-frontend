@@ -2,8 +2,8 @@
 
 button {
     text-transform: uppercase;
-    background: $corPrincipal;
-    color: #fff;
+    background: $roxoPrincipal;
+    color: white;
     border: none;
     border-radius: 7px;
     font-size: 25px;
@@ -13,5 +13,12 @@ button {
 }
 
 button:hover {
-    background-color: #2C3E50; 
+    background: #7a44cf;
+    color: white 
+}
+
+.box {
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
 }

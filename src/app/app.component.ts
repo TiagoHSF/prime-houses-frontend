@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'prime-houses-frontend';
+  title = 'Prime Houses';
 
   teste(){
     console.log("teste");

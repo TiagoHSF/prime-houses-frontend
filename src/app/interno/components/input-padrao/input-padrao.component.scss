@@ -9,6 +9,10 @@
 }
 
 ::ng-deep .mdc-floating-label {
-    color: $corPrincipal !important;
-    font-weight: 600 !important;
+    color: $roxoPrincipal !important;
+    font-weight: 500 !important;
+}
+
+.mat-icon {
+    color: $roxoPrincipal;
 }
