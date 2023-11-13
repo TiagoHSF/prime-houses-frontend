@@ -1,0 +1,101 @@
+
+@import "./../../../../constantes.scss";
+
+.base {
+    position: absolute;
+    width: 97%;
+    height: 50%;
+    padding-left: 27rem;
+    padding-top: 2rem;
+}
+
+.card {
+    background-color: #ffff;
+    padding: 2rem;
+    display: grid;
+    border-radius: 20px;
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+}
+
+.card-body {
+    display: grid;
+}
+
+.valor {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    padding-top: 25px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* ou qualquer outro valor desejado */
+    margin: auto;
+    border: 1px solid #ccc; /* Apenas para visualização - você pode remover isso */
+}
+
+.primeiro-card {
+    background-color: #ffff;
+    padding: 2rem;
+    display: grid;
+    border-radius: 20px;
+    background: $degradeRosa;
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.segundo-card {
+    background-color: #ffff;
+    padding: 2rem;
+    display: grid;
+    border-radius: 20px;
+    background: $degradeRoxo;
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.terceiro-card {
+    background-color: #ffff;
+    padding: 2rem;
+    display: grid;
+    border-radius: 20px;
+    background: $degradeAzul;
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.quarto-card {
+    background-color: #ffff;
+    padding: 2rem;
+    display: grid;
+    border-radius: 20px;
+    background: $degradeAmarelo;
+    box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+    color: white;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.card-detalhes {
+    font-size: 15px !important;
+    margin-bottom: 10px;
+}
+  
+

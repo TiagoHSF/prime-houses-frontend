@@ -32,10 +32,15 @@ export class LoginComponent implements OnInit, AfterViewInit {
       senha: this.form.get('senha')?.value,
     }).subscribe((result) => {
       console.log(result);
+      //IF CORRETOR
+      this._router.navigateByUrl('dashboard')
+      //ELSE
+      // this._router.navigateByUrl('imoveis')
     })
+    this._router.navigateByUrl('dashboard')
   }
 
   cadastroNavigate(){
-    this._router.navigateByUrl("/cadastro")
+    this._router.navigateByUrl("cadastro")
   }
 }

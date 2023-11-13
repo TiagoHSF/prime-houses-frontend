@@ -1,0 +1,125 @@
+<!-- <div class="base">
+  <div fxLayout="row" fxLayoutAlign="center center" style="display: flex">
+    <div fxFlex="33">
+      <div class="card">
+        <div class="card-body">
+          <span class="valor">R$ {{ dashboard.totalComissoes}}</span>
+          <span>TOTAL EM COMISSÕES</span>
+
+          <span class="valor">R$ {{ dashboard.totalVendasBrutas }}</span>
+          <span>TOTAL EM VENDAS BRUTAS</span>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="33">
+      <div class="card">
+        <div class="card-body">
+            <span class="valor">R$ {{ dashboard.totalComissoes}}</span>
+            <span>TOTAL EM COMISSÕES</span>
+  
+            <span class="valor">R$ {{ dashboard.totalVendasBrutas }}</span>
+            <span>TOTAL EM VENDAS BRUTAS</span>
+          </div>
+      </div>
+    </div>
+    <div fxFlex="33">
+      <div class="card">
+        <div class="card-body">
+            <span class="valor">R$ {{ dashboard.totalComissoes}}</span>
+            <span>TOTAL EM COMISSÕES</span>
+  
+            <span class="valor">R$ {{ dashboard.totalVendasBrutas }}</span>
+            <span>TOTAL EM VENDAS BRUTAS</span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="base">
+  <span>DASHBOARD</span>
+  <div fxLayout="row" fxLayoutAlign="center center" class="card">
+    <div fxFlex="20">
+      <div fxLayout="column">
+        <span class="valor">R$ {{ dashboard.totalComissoes }}</span>
+        <span>TOTAL EM COMISSÕES</span>
+      </div>
+
+      <div fxLayout="column">
+        <span class="valor">R$ {{ dashboard.totalVendasBrutas }}</span>
+        <span>TOTAL EM VENDAS BRUTAS</span>
+      </div>
+
+      <div fxLayout="column">
+        <div style="display: block ruby;">
+          <app-botao-padrao
+            fxLayoutAlign="center center"
+            [style]="'width: 11rem; font-size: 16px !important; margin-top: 18px'"
+            [nomeBotao]="'IR PARA IMÓVEIS'"
+            [desabilitado]="false"
+            (click)="navigateImoveis()"
+          ></app-botao-padrao>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="60">
+      <div>
+        <p-chart type="line" [data]="basicData" [options]="basicOptions"></p-chart> 
+        <!-- DIFERENÇA DE COMISSÃO E VENDA BRUTA NOS ÚLTIMOS MESES -->
+      </div>
+    </div>
+    <div fxFlex="20">
+      <p-chart type="doughnut" [data]="basicData" [options]="basicOptions"></p-chart>
+      <!-- QUAL TIPO DE IMÓVEL FOI VENDIDO -->
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="padding-top: 20px;">
+    <div fxFlex="23" class="primeiro-card">
+      <span class="card-detalhes">DOCUMENTOS PENDENTES</span>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="50">
+          <i class="fa-solid fa-file-signature"></i>
+        </div>
+        <div fxFlex="50">
+          {{ dashboard.documentosPendentesAssinatura }}
+        </div>
+      </div>
+    </div>
+    <div fxFlex="23" class="segundo-card">
+      <span class="card-detalhes">POSSÍVEIS COMPRADORES</span>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="50">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div fxFlex="50">
+          {{ dashboard.quantidadePossiveisCompradores }}
+        </div>
+      </div>
+    </div>
+    <div fxFlex="23" class="terceiro-card">
+      <span class="card-detalhes">IMÓVEIS EM COMPRA</span>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="50">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div fxFlex="50">
+          {{ dashboard.quantidadeImoveisProcessoCompra }}
+        </div>
+      </div>
+    </div>
+    <div fxFlex="23" class="quarto-card">
+      <span class="card-detalhes">VISTORIAS EM PROGRESSO</span>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="50">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+        <div fxFlex="50">
+          {{ dashboard.vistoriasEmAndamento }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+

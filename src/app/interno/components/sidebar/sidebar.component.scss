@@ -1,0 +1,74 @@
+@import "./../../../../constantes.scss";
+
+.sidebar {
+    height: 100%;
+    width: 25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    padding-top: 20px;
+    z-index: 99999;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 8px;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 45px;
+    padding-left: 2rem;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Adapte a aparência para telas menores */
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+      padding-top: 15px;
+    }
+  
+    .sidebar ul {
+      text-align: center;
+    }
+  
+    .sidebar li {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
+  .nome-empresa{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 4rem;
+  }
+
+  .documento {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  i {
+    margin-right: 1rem;
+  }
+
+  li:hover {
+    color: $roxoPrincipal !important;
+    a:hover {
+      color: $roxoPrincipal !important;
+  }
+}
+
+ 
+  
