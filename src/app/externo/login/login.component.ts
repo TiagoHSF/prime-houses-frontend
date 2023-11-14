@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
     }).subscribe((result) => {
       console.log(result);
       //IF CORRETOR
-      this._router.navigateByUrl('dashboard')
+      // this._router.navigateByUrl('dashboard')
       //ELSE
       // this._router.navigateByUrl('imoveis')
     })
-    this._router.navigateByUrl('dashboard')
+    // this._router.navigateByUrl('dashboard')
   }
 
   cadastroNavigate(){
