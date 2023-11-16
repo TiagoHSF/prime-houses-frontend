@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from './app.service';
+import { StorageService } from './interno/service/util/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,12 @@ export class AppComponent implements OnInit {
 
   public exibeSidebar: boolean = true;
 
-  constructor(private router: Router, private _routeCheckService: AppService) {
+  constructor(private router: Router, 
+    private _routeCheckService: AppService,
+    private _storageService: StorageService ) {
+    if(this._storageService.localStorage.find('t') != null){
+      this.router.navigateByUrl('/dashboard');
+    }
     this.router.events.subscribe((event) => {
       const segments = this.router.url.split('/');
       const path = segments[1];
