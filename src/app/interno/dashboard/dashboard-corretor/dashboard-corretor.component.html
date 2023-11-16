@@ -38,7 +38,7 @@
 
 <div class="base">
   <span>DASHBOARD</span>
-  <div fxLayout="row" fxLayoutAlign="center center" class="card">
+  <div fxLayout="row" fxLayout.lt-md="column"fxLayoutAlign="center center" class="card">
     <div fxFlex="20">
       <div fxLayout="column">
         <span class="valor">R$ {{ dashboard.totalComissoes }}</span>
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="space-between center" style="padding-top: 20px;">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" style="padding-top: 20px;">
     <div fxFlex="23" class="primeiro-card">
       <span class="card-detalhes">DOCUMENTOS PENDENTES</span>
       <div fxLayout="row" fxLayoutAlign="center center">

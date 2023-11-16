@@ -9,6 +9,14 @@
     padding-top: 2rem;
 }
 
+/* Adapte a aparência para telas menores */
+@media screen and (max-width: 600px) {
+  .base {
+    width: 100%;
+    padding-left: 0rem;
+  }
+}
+
 .card {
     background-color: #ffff;
     padding: 2rem;
