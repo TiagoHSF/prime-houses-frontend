@@ -19,7 +19,7 @@ export class AutenticacaoEndpointService {
   public login(credentials: { email?: string; senha?: string }) {
     return this._httpClient.post<string>(
       `http://localhost:8080/${this.base}login`,
-      credentials
+      credentials,
     );
   }
 
