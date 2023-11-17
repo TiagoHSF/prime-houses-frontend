@@ -8,10 +8,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +30,6 @@ import { DashboardCorretorComponent } from './interno/operacoes/dashboard/dashbo
 import { GeoRelatorioComponent } from './interno/operacoes/geo-relatorio/geo-relatorio.component';
 import { ImoveisComponent } from './interno/operacoes/imoveis-corretor/imoveis.component';
 import { HttpsRequestInterceptor } from './interno/service/http-request.interceptor';
-
 
 @NgModule({
   declarations: [
@@ -60,6 +61,8 @@ import { HttpsRequestInterceptor } from './interno/service/http-request.intercep
     ChartModule,
     MatTableModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatExpansionModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },

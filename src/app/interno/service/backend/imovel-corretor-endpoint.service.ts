@@ -17,7 +17,10 @@ export class ImovelCorretorEndpointService {
     private router: Router
   ) {}
 
-  public listar(arg: {page: number, size: number, order: string}, empresaId: number) {
+  public listar(
+    arg: { page: number; size: number; order: string },
+    empresaId: number
+  ) {
     let params = new HttpParams();
     if (arg.page != null) {
       params = params.append('page', `${arg.page}`);
@@ -33,7 +36,17 @@ export class ImovelCorretorEndpointService {
     }
     return this._httpClient.get<PageResponse<ImovelResumoDTO>>(
       `http://localhost:8080/${this.base}listar`,
-      {params}
+      { params }
+    );
+  }
+
+  public excluir(id: number) {
+    let params = new HttpParams();
+    if (id != null) {
+      params = params.append('id', `${id}`);
+    }
+    return this._httpClient.delete(
+      `http://localhost:8080/${this.base}excluir`, {params}
     );
   }
 }

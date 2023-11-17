@@ -6,6 +6,15 @@
     fxLayoutAlign="center center"
     class="card"
   >
+    <div style="width: 100%; padding: 10px;">
+      <app-botao-padrao
+        style="float: inline-end;"
+        fxLayoutAlign="center center"
+        [style]="'width: 15rem'"
+        [nomeBotao]="'CRIAR IMÓVEL'"
+        (click)="criarImovel()"
+      ></app-botao-padrao>
+    </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="opcoes">
         <th mat-header-cell *matHeaderCellDef></th>
@@ -14,8 +23,12 @@
             <i class="fa-solid fa-bars"></i>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item><i class="fa-solid fa-pencil"></i>&nbsp;EDITAR</button>
-            <button mat-menu-item><i class="fa-solid fa-trash"></i>&nbsp;EXCLUIR</button>
+            <button (click)="editar(element.id)" mat-menu-item>
+              <i class="fa-solid fa-pencil"></i>&nbsp;EDITAR
+            </button>
+            <button (click)="excluir(element)" mat-menu-item>
+              <i class="fa-solid fa-trash"></i>&nbsp;EXCLUIR
+            </button>
           </mat-menu>
         </td>
       </ng-container>

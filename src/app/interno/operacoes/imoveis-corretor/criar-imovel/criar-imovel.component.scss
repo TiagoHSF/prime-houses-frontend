@@ -1,0 +1,26 @@
+@import "../../../../../constantes.scss";
+
+.base {
+    position: absolute;
+    width: 97%;
+    height: 50%;
+    padding-left: 27rem;
+    padding-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .base {
+      width: 100%;
+      padding-left: 0rem;
+    }
+  }
+  
+  .card {
+      background-color: #ffff;
+      padding: 2rem;
+      display: grid;
+      border-radius: 20px;
+      box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+      -webkit-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+      -moz-box-shadow: 1px 1px 29px 8px rgba(0,0,0,0.31);
+  }
