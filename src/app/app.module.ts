@@ -2,7 +2,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { registerLocaleData } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,7 +11,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartModule } from 'primeng/chart';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +24,10 @@ import { LoginComponent } from './externo/login/login.component';
 import { BotaoPadraoComponent } from './interno/components/botao-padrao/botao-padrao.component';
 import { InputPadraoComponent } from './interno/components/input-padrao/input-padrao.component';
 import { SidebarComponent } from './interno/components/sidebar/sidebar.component';
-import { DashboardCorretorComponent } from './interno/dashboard/dashboard-corretor/dashboard-corretor.component';
+import { DashboardCorretorComponent } from './interno/operacoes/dashboard/dashboard-corretor/dashboard-corretor.component';
+import { ImoveisComponent } from './interno/operacoes/imoveis-corretor/imoveis.component';
+import { HttpsRequestInterceptor } from './interno/service/http-request.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,8 @@ import { DashboardCorretorComponent } from './interno/dashboard/dashboard-corret
     BotaoPadraoComponent,
     InputPadraoComponent,
     SidebarComponent,
-    DashboardCorretorComponent
+    DashboardCorretorComponent,
+    ImoveisComponent
   ],
   imports: [
     BrowserModule,
@@ -49,12 +55,19 @@ import { DashboardCorretorComponent } from './interno/dashboard/dashboard-corret
     HttpClientModule,
     MatSlideToggleModule,
     MatCardModule,
-    ChartModule
+    ChartModule,
+    MatTableModule,
+    MatMenuModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpsRequestInterceptor,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { 
 

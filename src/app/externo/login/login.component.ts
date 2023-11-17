@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { AutenticacaoEndpointService } from 'src/app/interno/service/backend/autenticacao-endpoint.service';
 import { StorageService } from 'src/app/interno/service/util/storage.service';
+import Swal from 'sweetalert2';
 import { LoginService } from './login.service';
 
 @Component({
@@ -37,24 +38,21 @@ export class LoginComponent implements OnInit, AfterViewInit {
       take(1) 
     ).subscribe({
       next: (result) => {
-        this._storageService.localStorage.add('t', result);
-        this._autenticacaoEndpointService.findUserByToken(result)
-          .subscribe({
-            next: (user) => {
-              console.log(user);
-              if (user.tipo == 'CORRETOR') {
-                this._router.navigateByUrl("dashboard");
-              } else {
-                this._router.navigateByUrl("cadastro");
-              }
-            },
-            error: (error) => {
-              console.log(error);
-            }
-          });
+        this._storageService.localStorage.add('t', result.token);
+        if(result.tipo == 'CORRETOR'){
+          this._router.navigateByUrl('/dashboard')
+        } else if(result.tipo == 'CLIENTE'){
+          this._router.navigateByUrl('listar/imoveis')
+        }
+        this._storageService.localStorage.add('tUsuario', result.tipo);
       },
       error: (error) => {
-        console.log(error);
+        Swal.fire({
+          title: 'Ops!',
+          text: `Email ou senha inválidos!`,
+          icon: 'error',
+          showConfirmButton: false,
+        });
       }
     });
   }

@@ -15,7 +15,11 @@ export interface UsuarioDTO {
 
     codigoSegurancaConfirmado: boolean;
 
+    senha: string;
+
     tipo: string;
+
+    token: string;
 
     // EnderecoDTO enderecoDTO;
 

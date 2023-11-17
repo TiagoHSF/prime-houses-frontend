@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-corretor',
@@ -21,7 +22,7 @@ export class DashboardCorretorComponent implements OnInit {
     vistoriasEmAndamento: 5
   }
 
-  constructor(){
+  constructor(private _router: Router){
 
   }
 
@@ -78,7 +79,7 @@ export class DashboardCorretorComponent implements OnInit {
   
 
   navigateImoveis(){
-
+    this._router.navigateByUrl("imoveis")
   }
 
 }

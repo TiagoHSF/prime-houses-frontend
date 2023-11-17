@@ -14,7 +14,7 @@ export class CadastroService {
     form.addControl("sobrenome", new FormControl("", [Validators.required]));
 
     form.addControl("documento", new FormControl("", [Validators.required]));
-    form.addControl("dataNascimento", new FormControl("", [Validators.required]));
+    form.addControl("dataNascimento", new FormControl(""));
 
     form.addControl("email", new FormControl("", [Validators.required]));
     form.addControl("celular", new FormControl("", [Validators.required]));

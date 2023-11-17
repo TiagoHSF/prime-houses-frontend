@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, 
     private _routeCheckService: AppService,
     private _storageService: StorageService ) {
-    if(this._storageService.localStorage.find('t') != null){
-      this.router.navigateByUrl('/dashboard');
-    }
+    // if(this._storageService.localStorage.find('t') != null){
+    //   this.router.navigateByUrl('/dashboard');
+    // }
     this.router.events.subscribe((event) => {
       const segments = this.router.url.split('/');
       const path = segments[1];
@@ -30,6 +30,21 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+    // if(this._storageService.localStorage.find('t') == null){
+      //   this._autenticacaoEndpointService.logout();
+      //   this.router.navigateByUrl('acesso');
+      // } else {
+      //   if(tipoUsuario == 'CORRETOR'){
+      //     if(path != "acesso" && path != "cadastro"){
+      //       this.exibeSidebar = true;
+      //     }
+      //     this.router.navigateByUrl('dashboard');
+      //   } else {
+      //     this.exibeSidebar = false;
+      //     this.router.navigateByUrl('listar/imoveis');
+      //   }
+      // }
 
   ngOnInit() {}
 }

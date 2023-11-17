@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { ChartModule } from 'primeng/chart';
-import { BotaoPadraoModule } from '../../components/botao-padrao/botao-padrao.module';
+import { BotaoPadraoModule } from '../../../components/botao-padrao/botao-padrao.module';
 import { DashboardCorretorComponent } from './dashboard-corretor.component';
 
 
