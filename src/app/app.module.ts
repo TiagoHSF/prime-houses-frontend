@@ -25,6 +25,7 @@ import { BotaoPadraoComponent } from './interno/components/botao-padrao/botao-pa
 import { InputPadraoComponent } from './interno/components/input-padrao/input-padrao.component';
 import { SidebarComponent } from './interno/components/sidebar/sidebar.component';
 import { DashboardCorretorComponent } from './interno/operacoes/dashboard/dashboard-corretor/dashboard-corretor.component';
+import { GeoRelatorioComponent } from './interno/operacoes/geo-relatorio/geo-relatorio.component';
 import { ImoveisComponent } from './interno/operacoes/imoveis-corretor/imoveis.component';
 import { HttpsRequestInterceptor } from './interno/service/http-request.interceptor';
 
@@ -39,7 +40,8 @@ import { HttpsRequestInterceptor } from './interno/service/http-request.intercep
     InputPadraoComponent,
     SidebarComponent,
     DashboardCorretorComponent,
-    ImoveisComponent
+    ImoveisComponent,
+    GeoRelatorioComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { HttpsRequestInterceptor } from './interno/service/http-request.intercep
     MatCardModule,
     ChartModule,
     MatTableModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
