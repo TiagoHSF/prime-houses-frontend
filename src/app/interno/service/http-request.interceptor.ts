@@ -41,11 +41,17 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
 
     copia = req.clone({
       url: `${req.url}`,
-      headers: new HttpHeaders().append(
-        'Authorization',
-        'Bearer ' + this._storageService.localStorage.find('t') || ''
-      ),
     });
+
+    if(!copia.url.includes("/login") && !copia.url.includes("usuario/criar")){
+      copia = req.clone({
+        url: `${req.url}`,
+        headers: new HttpHeaders().append(
+          'Authorization',
+          'Bearer ' + this._storageService.localStorage.find('t') || ''
+        ),
+      });
+    }
 
     console.log(copia);
 

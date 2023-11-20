@@ -42,3 +42,13 @@ a {
     color: $roxoPrincipal;
     font-weight: bold;
 }
+
+.exibe-senha {
+    font-size: 18px;
+    display: grid;
+    padding-left: 12px;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: $roxoPrincipal;
+}

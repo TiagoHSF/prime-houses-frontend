@@ -10,6 +10,7 @@
 
 <div class="container" style="width: 100%; height: 100%;">
     <app-sidebar *ngIf="exibeSidebar"></app-sidebar>
+    <app-navbar *ngIf="exibeNavbar"></app-navbar>
     <div class="content" style="width: 100%; height: 100%;">
       <!-- Conteúdo principal da sua aplicação -->
       <router-outlet></router-outlet>

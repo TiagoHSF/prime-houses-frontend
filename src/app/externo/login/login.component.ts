@@ -15,6 +15,8 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit, AfterViewInit {
   public form!: FormGroup;
 
+  public typeSenha = 'password';
+
   public constructor(
     private _loginService: LoginService,
     private _autenticacaoEndpointService: AutenticacaoEndpointService,
@@ -42,7 +44,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         if(result.tipo == 'CORRETOR'){
           this._router.navigateByUrl('/dashboard')
         } else if(result.tipo == 'CLIENTE'){
-          this._router.navigateByUrl('listar/imoveis')
+          this._router.navigateByUrl('imoveis/listagem')
         }
         this._storageService.localStorage.add('tUsuario', result.tipo);
       },
@@ -59,5 +61,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   cadastroNavigate(){
     this._router.navigateByUrl("cadastro")
+  }
+
+  exibirSenha(){
+    if(this.typeSenha == 'password'){
+      this.typeSenha = 'text';
+    } else {
+      this.typeSenha = 'password'
+    }
   }
 }

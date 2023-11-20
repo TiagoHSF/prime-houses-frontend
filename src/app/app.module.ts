@@ -30,6 +30,8 @@ import { DashboardCorretorComponent } from './interno/operacoes/dashboard/dashbo
 import { GeoRelatorioComponent } from './interno/operacoes/geo-relatorio/geo-relatorio.component';
 import { ImoveisComponent } from './interno/operacoes/imoveis-corretor/imoveis.component';
 import { HttpsRequestInterceptor } from './interno/service/http-request.interceptor';
+import { ListagemImoveisComponent } from './interno/visao-cliente/listagem-imoveis/listagem-imoveis.component';
+import { NavbarComponent } from './interno/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { HttpsRequestInterceptor } from './interno/service/http-request.intercep
     SidebarComponent,
     DashboardCorretorComponent,
     ImoveisComponent,
-    GeoRelatorioComponent
+    GeoRelatorioComponent,
+    ListagemImoveisComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

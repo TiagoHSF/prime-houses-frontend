@@ -22,18 +22,31 @@
             [iconeSufixo]="true"
             [type]="'email'"
           ></app-input-padrao>
-          <app-input-padrao
-            [style]="'width: 20rem;'"
-            [icone]="'key'"
-            fxLayoutAlign="center center"
-            [form]="form"
-            [formControlName]="'senha'"
-            [appearance]="'outline'"
-            [nomeInput]="'Senha'"
-            [iconeSufixo]="true"
-            [placeholder]="''"
-            [type]="'password'"
-          ></app-input-padrao>
+          <div fxLayoutAlign="center center">
+            <div style="margin-left: 30px;">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [icone]="'key'"
+                [form]="form"
+                [formControlName]="'senha'"
+                [appearance]="'outline'"
+                [nomeInput]="'Senha'"
+                [iconeSufixo]="true"
+                [placeholder]="''"
+                [type]="typeSenha"
+              ></app-input-padrao>
+            </div>
+            <i
+              *ngIf="typeSenha == 'password'"
+              (click)="exibirSenha()"
+              class="fa-solid fa-eye exibe-senha"
+            ></i>
+            <i
+              *ngIf="typeSenha == 'text'"
+              (click)="exibirSenha()"
+              class="fa-solid fa-eye-slash exibe-senha"
+            ></i>
+          </div>
         </form>
         <div fxLayout="row" fxLayoutAlign="space-evenly center">
           <mat-checkbox>LEMBRAR SENHA</mat-checkbox>
@@ -50,7 +63,8 @@
           <span
             style="margin-top: 1rem; font-size: 15px"
             fxLayoutAlign="center center"
-            >Ainda não possui uma conta? <a (click)="cadastroNavigate()">&nbsp;Criar</a></span
+            >Ainda não possui uma conta?
+            <a (click)="cadastroNavigate()">&nbsp;Criar</a></span
           >
         </div>
       </div>

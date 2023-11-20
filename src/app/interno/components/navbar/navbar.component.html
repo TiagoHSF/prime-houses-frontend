@@ -1,0 +1,8 @@
+<div class="navbar" fxLayout="row" fxLayoutAlign="end center">
+    <i mat-button [matMenuTriggerFor]="usuario" class="fa-solid fa-user"></i>
+    <mat-menu #usuario="matMenu">
+       <button (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </mat-menu>
+
+    <i *ngIf="usuarioLogado" class="fa-solid fa-gear"></i>
+</div>

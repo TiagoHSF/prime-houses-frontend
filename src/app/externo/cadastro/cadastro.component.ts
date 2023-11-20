@@ -61,13 +61,14 @@ export class CadastroComponent implements OnInit, AfterViewInit {
             showConfirmButton: true,
           }).then((value) => {
             if(value.isConfirmed){
-              this._storageService.localStorage.add('t', result.token);
-              if (result.tipo == 'CORRETOR') {
-                this._router.navigateByUrl('/dashboard');
-              } else if (result.tipo == 'CLIENTE') {
-                this._router.navigateByUrl('listar/imoveis');
-              }
-              this._storageService.localStorage.add('tUsuario', result.tipo);
+              this._router.navigateByUrl("acesso");
+              // this._storageService.localStorage.add('t', result.token);
+              // if (result.tipo == 'CORRETOR') {
+              //   this._router.navigateByUrl('/dashboard');
+              // } else if (result.tipo == 'CLIENTE') {
+              //   this._router.navigateByUrl('listar/imoveis');
+              // }
+              // this._storageService.localStorage.add('tUsuario', result.tipo);
             }
           });
         },
