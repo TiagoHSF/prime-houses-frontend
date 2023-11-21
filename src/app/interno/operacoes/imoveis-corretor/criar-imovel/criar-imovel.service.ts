@@ -14,6 +14,8 @@ export class CriarImovelService {
     form.addControl("descricao", new FormControl("", [Validators.required]));
     form.addControl("valor", new FormControl("", [Validators.required]));
     form.addControl("codigo", new FormControl("", [Validators.required]));
+
+    form.addControl("tipo", new FormControl("", [Validators.required]));
     return form;
   }
   

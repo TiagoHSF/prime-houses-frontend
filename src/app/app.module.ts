@@ -32,6 +32,8 @@ import { ImoveisComponent } from './interno/operacoes/imoveis-corretor/imoveis.c
 import { HttpsRequestInterceptor } from './interno/service/http-request.interceptor';
 import { ListagemImoveisComponent } from './interno/visao-cliente/listagem-imoveis/listagem-imoveis.component';
 import { NavbarComponent } from './interno/components/navbar/navbar.component';
+import { CriarImovelComponent } from './interno/operacoes/imoveis-corretor/criar-imovel/criar-imovel.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { NavbarComponent } from './interno/components/navbar/navbar.component';
     ImoveisComponent,
     GeoRelatorioComponent,
     ListagemImoveisComponent,
-    NavbarComponent
+    NavbarComponent,
+    CriarImovelComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ import { NavbarComponent } from './interno/components/navbar/navbar.component';
     MatTableModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },

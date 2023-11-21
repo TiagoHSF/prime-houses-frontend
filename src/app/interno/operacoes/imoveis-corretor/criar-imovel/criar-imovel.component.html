@@ -6,9 +6,75 @@
     fxLayoutAlign="center center"
     class="card"
   >
-    <div style="width: 100%; padding: 10px">
-    
-    
+    <div *ngIf="form" style="width: 100%; padding: 10px">
+      <form [formGroup]="form">
+        <div fxLayout="row" fxLayout.lt-xl="column" fxLayoutAlign="start start">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="60">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'titulo'"
+                [appearance]="'outline'"
+                [nomeInput]="'Título'"
+                [placeholder]="'Apartamento 4 quartos'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="40">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'codigo'"
+                [appearance]="'outline'"
+                [nomeInput]="'Código'"
+                [placeholder]="'Código imobiliário'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+          </div>
+          <app-input-padrao
+            [style]="'width: 30rem;'"
+            [form]="form"
+            [formControlName]="'descricao'"
+            [appearance]="'outline'"
+            [nomeInput]="'Descrição'"
+            [placeholder]="'Descreva seu imóvel'"
+            [type]="'text'"
+          ></app-input-padrao>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="60">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="form"
+                [formControlName]="'valor'"
+                [appearance]="'outline'"
+                [nomeInput]="'Valor'"
+                [placeholder]="'Valor do imóvel'"
+                [type]="'numer'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="40" class="tipo">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Tipo do Imóvel</mat-label>
+                <mat-select formControlName="tipo">
+                  <mat-option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- <img src="./../../../../../assets/images/19198827.jpg" alt=""> -->
+          </div>
+        </div>
+      </form>
+    </div>
+    <div style="display: block ruby; width: 100%;">
+      <app-botao-padrao
+        fxLayoutAlign="end end"
+        [style]="'width: 11rem; font-size: 16px !important; margin-top: 18px'"
+        [nomeBotao]="'CONTINUAR'"
+        [desabilitado]="false"
+        (click)="continuar()"
+      ></app-botao-padrao>
     </div>
   </div>
 </div>
