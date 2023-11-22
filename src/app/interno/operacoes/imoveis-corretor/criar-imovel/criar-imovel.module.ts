@@ -1,13 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CriarImovelComponent } from './criar-imovel.component';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputPadraoModule } from 'src/app/interno/components/input-padrao/input-padrao.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
+import { FileUploadModule } from 'primeng/fileupload';
 import { BotaoPadraoModule } from 'src/app/interno/components/botao-padrao/botao-padrao.module';
+import { InputPadraoModule } from 'src/app/interno/components/input-padrao/input-padrao.module';
+import { CriarImovelComponent } from './criar-imovel.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { BotaoPadraoModule } from 'src/app/interno/components/botao-padrao/botao
     MatInputModule,
     MatIconModule,
     MatSelectModule,
-    BotaoPadraoModule
+    BotaoPadraoModule,
+    MatStepperModule,
+    FileUploadModule
   ]
 })
 export class CriarImovelModule { }

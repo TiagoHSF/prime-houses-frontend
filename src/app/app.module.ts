@@ -14,10 +14,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartModule } from 'primeng/chart';
+import { FileUploadModule } from 'primeng/fileupload';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './externo/cadastro/cadastro.component';
@@ -25,15 +28,14 @@ import { EsqueciSenhaComponent } from './externo/esqueci-senha/esqueci-senha.com
 import { LoginComponent } from './externo/login/login.component';
 import { BotaoPadraoComponent } from './interno/components/botao-padrao/botao-padrao.component';
 import { InputPadraoComponent } from './interno/components/input-padrao/input-padrao.component';
+import { NavbarComponent } from './interno/components/navbar/navbar.component';
 import { SidebarComponent } from './interno/components/sidebar/sidebar.component';
 import { DashboardCorretorComponent } from './interno/operacoes/dashboard/dashboard-corretor/dashboard-corretor.component';
 import { GeoRelatorioComponent } from './interno/operacoes/geo-relatorio/geo-relatorio.component';
+import { CriarImovelComponent } from './interno/operacoes/imoveis-corretor/criar-imovel/criar-imovel.component';
 import { ImoveisComponent } from './interno/operacoes/imoveis-corretor/imoveis.component';
 import { HttpsRequestInterceptor } from './interno/service/http-request.interceptor';
 import { ListagemImoveisComponent } from './interno/visao-cliente/listagem-imoveis/listagem-imoveis.component';
-import { NavbarComponent } from './interno/components/navbar/navbar.component';
-import { CriarImovelComponent } from './interno/operacoes/imoveis-corretor/criar-imovel/criar-imovel.component';
-import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatMenuModule,
     MatPaginatorModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    FileUploadModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
