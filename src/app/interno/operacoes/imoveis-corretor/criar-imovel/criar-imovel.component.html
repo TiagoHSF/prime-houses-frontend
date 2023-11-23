@@ -162,9 +162,9 @@
     <mat-step>
       <ng-template matStepLabel>DETALHAMENTO</ng-template>
       <h1>DETALHAMENTO<span class="detalhe">(SOMENTE AS INFORMAÇÕES PREENCHIDAS SERÃO EXIBIDAS AOS COMPRADORES)</span></h1> 
-      <div *ngIf="formDetalhamento">
+      <div *ngIf="formDetalhamento" class="card">
         <form [formGroup]="formDetalhamento">
-          <div fxLayout="row" fxLayoutAlign="start start" class="card">
+          <div fxLayout="row" fxLayoutAlign="center center">
             <div fxFlex="30">
               <app-input-padrao
                 [style]="'width: 20rem;'"
@@ -199,6 +199,136 @@
               ></app-input-padrao>
             </div>
           </div>
+
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formDetalhamento"
+                [formControlName]="'quantidadeSalas'"
+                [appearance]="'outline'"
+                [nomeInput]="'Quantidade Salas'"
+                [placeholder]="'3%'"
+                [type]="'number'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formDetalhamento"
+                [formControlName]="'quantidadeCozinhas'"
+                [appearance]="'outline'"
+                [nomeInput]="'Quantidade Cozinhas'"
+                [placeholder]="'3'"
+                [type]="'number'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formDetalhamento"
+                [formControlName]="'quantidadeSuites'"
+                [appearance]="'outline'"
+                [nomeInput]="'Quantidade Suítes'"
+                [placeholder]="'3'"
+                [type]="'number'"
+              ></app-input-padrao>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formDetalhamento"
+                [formControlName]="'quantidadeAreasExternas'"
+                [appearance]="'outline'"
+                [nomeInput]="'Quantidade Áreas Externas'"
+                [placeholder]="'3%'"
+                [type]="'number'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Possuí piscina?</mat-label>
+                <mat-select formControlName="piscina">
+                  <mat-option [value]="opcaoSelecionada(opcao)" *ngFor="let opcao of opcoes">
+                    {{ opcao }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxFlex="30">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Área de Churrasco?</mat-label>
+                <mat-select formControlName="areaDeChurrasco">
+                  <mat-option [value]="opcaoSelecionada(opcao)" *ngFor="let opcao of opcoes">
+                    {{ opcao }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formDetalhamento"
+                [formControlName]="'quantidadeVagasGaragem'"
+                [appearance]="'outline'"
+                [nomeInput]="'Vagas Garagem'"
+                [placeholder]="'3%'"
+                [type]="'number'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Terreno nivelado?</mat-label>
+                <mat-select formControlName="terrenoNivelado">
+                  <mat-option [value]="opcaoSelecionada(opcao)" *ngFor="let opcao of opcoes">
+                    {{ opcao }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxFlex="30">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Possuí água?</mat-label>
+                <mat-select formControlName="aguaLigada">
+                  <mat-option [value]="opcaoSelecionada(opcao)" *ngFor="let opcao of opcoes">
+                    {{ opcao }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="40">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Possuí energia?</mat-label>
+                <mat-select formControlName="energiaLigada">
+                  <mat-option [value]="opcaoSelecionada(opcao)" *ngFor="let opcao of opcoes">
+                    {{ opcao }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxFlex="40">
+              <mat-form-field appearance="outline" class="form-tipo">
+                <mat-label>Acesso pavimentado?</mat-label>
+                <mat-select formControlName="acessoPavimentado">
+                  <mat-option [value]="opcaoSelecionada(opcao)" *ngFor="let opcao of opcoes">
+                    {{ opcao }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+
         </form>
       </div>
       <div style="display: block ruby; width: 100%">
@@ -221,6 +351,96 @@
     <mat-step>
       <ng-template matStepLabel>LOCALIZAÇÃO</ng-template>
       <h1>LOCALIZAÇÃO</h1>
+      <div *ngIf="formEndereco" class="card">
+        <form [formGroup]="formEndereco">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'cep'"
+                [appearance]="'outline'"
+                [nomeInput]="'CEP'"
+                [placeholder]="'3%'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'endereco'"
+                [appearance]="'outline'"
+                [nomeInput]="'Logradouro'"
+                [placeholder]="'Rua ...'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'numero'"
+                [appearance]="'outline'"
+                [nomeInput]="'N°'"
+                [placeholder]="'3'"
+                [type]="'number'"
+              ></app-input-padrao>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'estado'"
+                [appearance]="'outline'"
+                [nomeInput]="'Estado'"
+                [placeholder]="'SP'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'cidade'"
+                [appearance]="'outline'"
+                [nomeInput]="'Cidade'"
+                [placeholder]="'Santos'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+            <div fxFlex="30">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'bairro'"
+                [appearance]="'outline'"
+                [nomeInput]="'Bairro'"
+                [placeholder]="'Boa Vista'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="60">
+              <app-input-padrao
+                [style]="'width: 20rem;'"
+                [form]="formEndereco"
+                [formControlName]="'complemento'"
+                [appearance]="'outline'"
+                [nomeInput]="'Complemento (Detalhe)'"
+                [placeholder]="'Condomínio, acesso, localização, proprietário.'"
+                [type]="'text'"
+              ></app-input-padrao>
+            </div>
+          </div>
+
+        </form>
+      </div>
       <div style="display: block ruby; width: 100%">
         <app-botao-padrao
           fxLayoutAlign="start start"
@@ -232,9 +452,9 @@
         <app-botao-padrao
           fxLayoutAlign="end end"
           [style]="'width: 11rem; font-size: 16px !important; margin-top: 18px'"
-          [nomeBotao]="'CONTINUAR'"
+          [nomeBotao]="'CRIAR'"
           [desabilitado]="false"
-          (click)="continuar()"
+          (click)="finalizar()"
         ></app-botao-padrao>
       </div>
     </mat-step>

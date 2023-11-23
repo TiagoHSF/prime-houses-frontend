@@ -27,20 +27,20 @@ export class CriarImovelService {
     const form = new FormGroup({});
 
     //DETALHES
-    form.addControl("tamanhoMtsQuadrados", new FormControl(0, [Validators.required]));
-    form.addControl("quantidadeQuartos", new FormControl(0, [Validators.required]));
-    form.addControl("quantidadeBanheiros", new FormControl(0, [Validators.required]));
-    form.addControl("quantidadeSalas", new FormControl(0, [Validators.required]));
-    form.addControl("quantidadeCozinhas", new FormControl(0, [Validators.required]));
-    form.addControl("quantidadeSuites", new FormControl(0, [Validators.required]));
-    form.addControl("quantidadeAreasExternas", new FormControl(0, [Validators.required]));
-    form.addControl("piscina", new FormControl(false, [Validators.required]));
-    form.addControl("areaDeChurrasco", new FormControl(false, [Validators.required]));
-    form.addControl("quantidadeVagasGaragem", new FormControl(0, [Validators.required]));
-    form.addControl("terrenoNivelado", new FormControl(false, [Validators.required])); //TERRENO
-    form.addControl("aguaLigada", new FormControl(false, [Validators.required])); 
-    form.addControl("energiaLigada", new FormControl(false, [Validators.required])); 
-    form.addControl("acessoPavimentado", new FormControl(false, [Validators.required]));
+    form.addControl("tamanhoMtsQuadrados", new FormControl(0));
+    form.addControl("quantidadeQuartos", new FormControl(0));
+    form.addControl("quantidadeBanheiros", new FormControl(0));
+    form.addControl("quantidadeSalas", new FormControl(0));
+    form.addControl("quantidadeCozinhas", new FormControl(0));
+    form.addControl("quantidadeSuites", new FormControl(0));
+    form.addControl("quantidadeAreasExternas", new FormControl(0));
+    form.addControl("piscina", new FormControl(false));
+    form.addControl("areaDeChurrasco", new FormControl(false));
+    form.addControl("quantidadeVagasGaragem", new FormControl(0));
+    form.addControl("terrenoNivelado", new FormControl(false)); //TERRENO
+    form.addControl("aguaLigada", new FormControl(false)); 
+    form.addControl("energiaLigada", new FormControl(false)); 
+    form.addControl("acessoPavimentado", new FormControl(false));
     return form;
   }
   

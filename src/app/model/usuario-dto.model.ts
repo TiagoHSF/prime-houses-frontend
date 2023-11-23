@@ -1,4 +1,6 @@
-export interface UsuarioDTO {
+import { GenericDTO } from "./generic-dto.model";
+
+export interface UsuarioDTO extends GenericDTO{
     nome: string;
 
     sobrenome: string;

@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImovelDTO } from 'src/app/model/imovel-dto.model';
 import { ImovelResumoDTO } from 'src/app/model/imovel-resumo-dto.model';
 import { PageResponse } from 'src/app/model/page-response.model';
 import { StorageService } from '../util/storage.service';
@@ -47,6 +48,18 @@ export class ImovelCorretorEndpointService {
     }
     return this._httpClient.delete(
       `http://localhost:8080/${this.base}excluir`, {params}
+    );
+  }
+
+  public criar(
+    imovelDTO: ImovelDTO,
+  ) {
+    let params = new HttpParams();
+    // if (imovelDTO.corretorId != null) {
+      params = params.append('corretorId', `${2}`);
+    // }
+    return this._httpClient.post<ImovelDTO>(
+      `http://localhost:8080/${this.base}criar`, imovelDTO, { params }
     );
   }
 }
